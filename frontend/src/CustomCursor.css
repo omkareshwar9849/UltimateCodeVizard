@@ -1,0 +1,24 @@
+body {
+    cursor: none; /* Hide default cursor */
+  }
+  
+  .custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #8a2be2, #800080);
+    pointer-events: none; /* Ensures cursor doesn't interfere with mouse events */
+    z-index: 9999; /* Make sure the cursor stays on top of other elements */
+    transform: translate(-50%, -50%); /* Center the cursor on the pointer */
+    transition: transform 0.1s ease; /* Smooth transition */
+  }
+  
+  a {
+    cursor: pointer; /* Change cursor to pointer for all anchor tags */
+  }
+  
+  a:hover {
+    cursor: crosshair; /* Change cursor to crosshair when hovering over anchor tags */
+  }
+  
