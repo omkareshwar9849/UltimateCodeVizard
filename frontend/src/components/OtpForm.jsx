@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const OtpForm = ({ handleSubmit, otp, onChange, setJson }) => {
+const OtpForm = ({ handleSubmit, otp, onChange, setJson, selectedLanguage, onLanguageChange }) => {
+  const [loading, setLoading] = useState(false);
+  const [inputLanguage, setInputLanguage] = useState(selectedLanguage);
+
   const handleSubmitInternal = async (e) => {
     e.preventDefault();
+    setLoading(true); // Set loading to true before sending the request
     const res = await fetch("http://localhost:5000/generate", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ prompt: otp })
+      body: JSON.stringify({ prompt:inputLanguage, otp  })
     });
     const json = await res.json();
     setJson(json);
+    setLoading(false); // Set loading to false after receiving the response
   }
 
   const handleChange = (e) => {
@@ -20,13 +25,33 @@ const OtpForm = ({ handleSubmit, otp, onChange, setJson }) => {
     }
   }
 
+  const handleLanguageChange = (e) => {
+    const selectedLanguage = e.target.value;
+    setInputLanguage(selectedLanguage);
+    onLanguageChange(selectedLanguage);
+  }
+
   return (
     <form onSubmit={handleSubmitInternal}>
       <div className="mb-3">
-        <label htmlFor="otp" autoComplete="false" className="form-label"><h1> Enter Your Request </h1></label>
-        <input type="text" value={otp} onChange={handleChange} className="form-control" id="otp" name="otp" required />
+      
+      <div className="mb-3">
+      <label htmlFor="language" className="form-label"><h1>Select Language:</h1></label>
+        <select id="language" className="form-select" value={inputLanguage} onChange={handleLanguageChange}>
+          <option value="c programe for">C</option>
+          <option value="c++ programe for">C++</option>
+          <option value="java programe for ">JAVA</option>
+          <option value="python programe for">Python</option>
+          {/* Add more options for other languages if needed */}
+        </select>
+      </div>  
+
+      <label htmlFor="otp" autoComplete="false" className="form-label"><h1> Enter Your Request </h1></label>
+      <input type="text" value={otp} onChange={handleChange} className="form-control" id="otp" name="otp" required />
       </div>
+
       <button type="submit" className="btn btn-primary">Submit</button>
+      {loading && <div className="loader"></div>} {/* Display loader if loading is true */}
     </form>
   );
 };
