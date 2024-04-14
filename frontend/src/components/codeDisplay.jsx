@@ -4,7 +4,7 @@ import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const CodeDisplay = ({ code }) => {
   return (
-    <SyntaxHighlighter language="java" style={oneDark} showLineNumbers wrapLines>
+    <SyntaxHighlighter language="c" style={oneDark} showLineNumbers wrapLines>
       {code}
     </SyntaxHighlighter>
   );

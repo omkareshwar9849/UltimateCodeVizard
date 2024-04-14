@@ -23,7 +23,7 @@ const OtpForm = ({ handleSubmit, otp, onChange, setJson }) => {
   return (
     <form onSubmit={handleSubmitInternal}>
       <div className="mb-3">
-        <label htmlFor="otp" autoComplete="false" className="form-label">Enter Promt</label>
+        <label htmlFor="otp" autoComplete="false" className="form-label"><h1> Enter Your Request </h1></label>
         <input type="text" value={otp} onChange={handleChange} className="form-control" id="otp" name="otp" required />
       </div>
       <button type="submit" className="btn btn-primary">Submit</button>

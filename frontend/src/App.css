@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Spartan',sans-serif;
+    
 }
 
 h1{
@@ -73,12 +74,16 @@ body{
 
 /*Header shart */
 
+#mainLogo{
+    height: 80px;
+    margin-left: 20px;
+}
+
 #header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 80px;
-    background: #343434;
+    background: linear-gradient(to right,#090909, #2e2e2e);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
     z-index: 999;
     position: sticky;
@@ -90,6 +95,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px 80px;
     
 }
 
@@ -103,13 +109,13 @@ body{
     text-decoration: none;
     font-size: 16px;
     font-weight: 600;
-    color:#1a1a1a;
+    color:#cacaca;
     transition: 0.3s ease;
 }
 
 #navbar li a:hover,
 #navbar li a.active{
-    color: #b69452;
+    color: #ede192;
     
 }
 
@@ -1078,11 +1084,10 @@ font-size: 13px;
         padding: 20px;
     }
 
-    .logo1 {
-      background-image: url('C:/Users/HP/Documents/programming_files/FinalProject/react-temp/src/images/logo1.png');
-      overflow: hidden;
-      text-indent: -9999px;
-  }  
+    #header img{
+        max-height: 30px;
+    }
+    
 
 }
 
