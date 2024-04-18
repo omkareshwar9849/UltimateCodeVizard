@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../src/App.css';
-import logo from "../images/logo1.png";
+import logo from "../images/logo2.png";
 import LoginForm from './LoginForm';
 import CustomCursor from './CustomCursor';
 

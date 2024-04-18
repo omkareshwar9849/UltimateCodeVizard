@@ -12,7 +12,7 @@ const OtpForm = ({ handleSubmit, otp, onChange, setJson, selectedLanguage, onLan
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ prompt:inputLanguage, otp  })
+      body: JSON.stringify({ prompt:`wtire a ${inputLanguage} code for ${otp} please give simple code`})
     });
     const json = await res.json();
     setJson(json);
@@ -38,10 +38,10 @@ const OtpForm = ({ handleSubmit, otp, onChange, setJson, selectedLanguage, onLan
       <div className="mb-3">
       <label htmlFor="language" className="form-label"><h1>Select Language:</h1></label>
         <select id="language" className="form-select" value={inputLanguage} onChange={handleLanguageChange}>
-          <option value="c programe for">C</option>
-          <option value="c++ programe for">C++</option>
-          <option value="java programe for ">JAVA</option>
-          <option value="python programe for">Python</option>
+          <option value="c">C</option>
+          <option value="cpp">C++</option>
+          <option value="java">JAVA</option>
+          <option value="python">Python</option>
           {/* Add more options for other languages if needed */}
         </select>
       </div>  
