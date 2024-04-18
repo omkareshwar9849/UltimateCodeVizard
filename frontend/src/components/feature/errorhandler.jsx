@@ -9,10 +9,16 @@ import OtpForm1 from '../OtpForm1';
 function Errorhandler() {
     const [otp, setOtp] = useState('');
     const [json, setJson] = useState('');
+    const [selectedRequest, setSelectedRequest] = useState('c'); 
 
     const setJsonResponse = (response) => {
     setJson(response);
     };
+
+    const handleRequestChange = (Request) => {
+        setSelectedRequest(Request);
+    };
+
     return (
         <div>
             <CustomCursor/>
@@ -21,8 +27,13 @@ function Errorhandler() {
                 <div className="code1">
                     <h1>HANDLING THE ERROR IN THE CODE</h1>
                     <div className="row">
-                        <div className="col-md-6 left-section prompt">
-                            <OtpForm1 otp={otp} onChange={setOtp} setJson={setJsonResponse} />
+                        <div className="col-md-6 left-section prompt1">
+                            <OtpForm1 otp={otp}
+                             onChange={setOtp}
+                             setJson={setJsonResponse}
+                             selectedRequest={selectedRequest}
+                             onRequestChange={handleRequestChange}  
+                            />
                         </div>
                         <div className="col-md-6 right-section">
                             <h1>Result Display</h1>

@@ -53,18 +53,4 @@
       transform: rotate(360deg);
     }
   }
-  .sunny {
-    display: flex;
-    flex-direction: row;
-  }
-  .select-button {
-    background-color: #ffffff;
-    outline:none;
-    color:black;
-  }
-  .sunny-btn {
-    border: 1px solid black;
-    margin-left:30px;
-    margin-top: 40px;
-background-color: white;
-  } 
+  
