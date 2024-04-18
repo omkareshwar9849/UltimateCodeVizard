@@ -9,15 +9,11 @@ import OtpForm1 from '../OtpForm1';
 function Errorhandler() {
     const [otp, setOtp] = useState('');
     const [json, setJson] = useState('');
-    const [selectedRequest, setSelectedRequest] = useState('c'); 
 
     const setJsonResponse = (response) => {
     setJson(response);
     };
 
-    const handleRequestChange = (Request) => {
-        setSelectedRequest(Request);
-    };
 
     return (
         <div>
@@ -28,11 +24,9 @@ function Errorhandler() {
                     <h1>HANDLING THE ERROR IN THE CODE</h1>
                     <div className="row">
                         <div className="col-md-6 left-section prompt1">
-                            <OtpForm1 otp={otp}
-                             onChange={setOtp}
-                             setJson={setJsonResponse}
-                             selectedRequest={selectedRequest}
-                             onRequestChange={handleRequestChange}  
+                            <OtpForm1 otp={otp} 
+                             onChange={setOtp} 
+                             setJson={setJsonResponse} 
                             />
                         </div>
                         <div className="col-md-6 right-section">
