@@ -51,7 +51,7 @@ function Codereview() {
             <CustomCursor/>
             <Header />   
             <div className="code1">
-                <h1>GIVING THE REVIEW OF THE CODE</h1>
+                <h1 className='main_header'>GIVING THE REVIEW OF THE CODE</h1>
                 <div className="row">
                     <div className="col-md-6 left-section prompt1">
                         <form onSubmit={handleSubmit}>
@@ -72,7 +72,7 @@ function Codereview() {
                         </form>
                     </div>
                     <div className="col-md-6 right-section">
-                        <h1>{`Code Display `}</h1>
+                        <h1 className='main_header'>{`Code Display `}</h1>
                         <CodeDisplay code={json.output} language={selectedLanguage} />
                     </div>
                 </div>

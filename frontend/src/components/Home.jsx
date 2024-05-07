@@ -7,15 +7,17 @@ import './home.css';
 import image from "../images/image001.svg";
 
 const Home = () => {
+
+  
   return (
     <div>
-      <CustomCursor/>
+      <CustomCursor />
       <Header />
       
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-6 left-section">
-            <h1>Welcome to Ultimate Code Vizard</h1>
+            <h1 className='main_header'>Welcome to Ultimate Code Vizard</h1>
             <p>
               This is the ultimate tool for all your coding needs. From code generation to error handling,
               from time complexity analysis to code conversion, we've got you covered.
@@ -29,18 +31,20 @@ const Home = () => {
     
     
         <div className="container">
-          <strong><h1>FEATURES</h1></strong>
+          <section id="Features">
+          <strong><h1 className='main_header'>FEATURES</h1></strong>
           <div className="feature-list">
-            <FeaturePlate font='yellow' name='codegenerator' title="Code Generator" description=" Automatically generate code snippets or templates based on user inputs or predefined patterns to help developers." />
+            <FeaturePlate font='yellow' name='codegenerator' title="Code Generator" description=" Automatically generate code snippets or templates based on user inputs or predefined patterns to help developers in coding." />
             <FeaturePlate font='purple' name='errorhandler' title="Error Handler" description=" Implement error detection and reporting mechanisms to assist developers in identifying and resolving issues more effectively." />
             <FeaturePlate font='blue' name='codereview' title="Code Review" description="Analyze code for adherence to coding standards, best practices, and potential vulnerabilities, providing feedback for improvement." />
             <FeaturePlate font='green' name='timecomplexity' title="Time Complexity" description="Determine the computational efficiency of algorithms by analyzing their time complexity, aiding in performance optimization." />
             <FeaturePlate font='red' name='codeconverter' title="Convertering the Code" description="Translate code from one programming language to another,facilitating interoperability & migration b/w different platforms." />
-            <FeaturePlate font='orange' name='codeefficiency' title="Improve Code efficiency" description="Offer suggestions and optimizations to enhance the speed, memory usage, and overall performance of code." />
-            <FeaturePlate font='pink' name='sqlconvert' title="Convertering to the Sql" description="Convert natural language queries or commands into SQL queries for interacting with databases more intuitively." />
+            <FeaturePlate font='orange' name='codeefficiency' title="Improve Code efficiency" description="Offer suggestions and optimizations to enhance the speed, memory usage, and overall performance of code for execution." />
+            <FeaturePlate font='pink' name='sqlconvert' title="Convertering to the Sql" description="Converting of the natural language into the queries or commands into SQL queries for interacting with databases more intuitively ." />
             
             {/* Add more FeaturePlate components as needed */}
           </div>
+          </section>
         </div>
       </div>
 

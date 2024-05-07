@@ -40,7 +40,7 @@ const Sqlconvert = () => {
             <CustomCursor />
             <Header />
             <div className="code">
-                <h1>CONVERTING INTO THE SQL COMMANDS </h1>
+                <h1 className='main_header'>CONVERTING INTO THE SQL COMMANDS </h1>
                 <div className="row">
                     <div className="col-md-6 left-section prompt2">
                         <form onSubmit={handleSubmit}>
@@ -52,7 +52,7 @@ const Sqlconvert = () => {
                         </form>
                     </div>
                     <div className="col-md-6 right-section">
-                        <h1>{`Code Display `}</h1>
+                        <h1 className='main_header'>{`Result Display `}</h1>
                         <CodeDisplay code={json.output} language='human language' />
                     </div>
                 </div>
@@ -64,84 +64,3 @@ const Sqlconvert = () => {
 export default Sqlconvert;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { useState } from 'react'
-// import './feature.css';
-// import CustomCursor from '../CustomCursor';
-// import Header from '../header';
-// import CodeDisplay from '../codeDisplay';
-// import OtpForm1 from '../OtpForm1';
-
-// function Sqlconvert() {
-//   const [otp, setOtp] = useState('');
-//     const [json, setJson] = useState('');
-
-//     const setJsonResponse = (response) => {
-//     setJson(response);
-//     };
-//     return (
-//         <div>
-//             <CustomCursor/>
-//             <Header />
-//             <div >      
-//                 <div className="code1">
-//                   <h1>CONVERTING INTO THE SQL COMMANDS</h1>
-//                     <div className="row">
-//                         <div className="col-md-6 left-section prompt">
-//                             <OtpForm1 otp={otp} onChange={setOtp} setJson={setJsonResponse} />
-//                         </div>
-//                         <div className="col-md-6 right-section">
-//                             <h1>Result Display</h1>
-//                             <CodeDisplay code={json.output} />
-//                         </div>
-//                     </div>
-//                 </div>
-
-
-
-
-//               {/*======>  main code  <============
-
-//                <OtpForm1 otp={otp} onChange={setOtp} setJson={setJsonResponse} />
-//               <h1>Result Display</h1>
-//               <CodeDisplay code={json.output} />  
-              
-//               */}
-//             </div>
-//         </div>
-//     )
-// }
-
-// export default Sqlconvert

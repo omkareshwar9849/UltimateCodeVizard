@@ -51,7 +51,7 @@ function Timecomplexity() {
             <CustomCursor/>
             <Header />   
             <div className="code1">
-                <h1>CALCULATING THE TIME COMPLEXITY OF THE CODE
+                <h1 className='main_header'>CALCULATING THE TIME COMPLEXITY OF THE CODE
 
                 </h1>
                 <div className="row">
@@ -74,7 +74,7 @@ function Timecomplexity() {
                         </form>
                     </div>
                     <div className="col-md-6 right-section">
-                        <h1>{`Code Display `}</h1>
+                        <h1 className='main_header'>{`Code Display `}</h1>
                         <CodeDisplay code={json.output} language={selectedLanguage} />
                     </div>
                 </div>

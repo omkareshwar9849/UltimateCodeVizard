@@ -48,28 +48,33 @@ const Codegenerator = () => {
             <CustomCursor />
             <Header />
             <div className="code">
-                <h1>GENERATING THE SNIPPET CODE </h1>
+                <h1 className='main_header'>ULTIMATE CODE GENERATING</h1>
                 <div className="row">
                     <div className="col-md-6 left-section prompt">
                         <form onSubmit={handleSubmit}>
-                            <div className="mb-3">
-                                <label htmlFor="language" className="form-label"><h1>Select Language:</h1></label>
-                                <select id="language" className="form-select" value={inputLanguage} onChange={handleLanguageChange}>
+                            <div className="mb-4">
+                                <label htmlFor="language" className="form-label"><h4>Select Language:</h4></label>
+                                <select id="language" className="form-select translucent-input" value={inputLanguage} onChange={handleLanguageChange}>
                                     <option value="c">C</option>
                                     <option value="cpp">C++</option>
                                     <option value="java">JAVA</option>
                                     <option value="python">Python</option>
+
                                 </select>
                             </div>
 
-                            <label htmlFor="otp" autoComplete="false" className="form-label"><h1> Enter Your Request </h1></label>
-                            <input type="text" value={request} onChange={handleChange} className="form-control" id="otp" name="otp" required />
+                            <div className="mb-4">
+                                <label htmlFor="otp" autoComplete="false" className="form-label "><h4>Enter Your Request:</h4></label>
+                                <input type="text" value={request} onChange={handleChange} className="form-control translucent-input" id="otp" name="otp" required />
+                            </div>
+                            <div>
                             <button type="submit" className="btn btn-primary">Submit</button>
-                            {loading && <div className="loader"></div>}
+                                {loading && <div className="loader"></div>}
+                            </div>
                         </form>
                     </div>
                     <div className="col-md-6 right-section">
-                        <h1>{`Code Display `}</h1>
+                        <h1 className='main_header'>{`Code Display `}</h1>
                         <CodeDisplay code={json.output} language={selectedLanguage} />
                     </div>
                 </div>

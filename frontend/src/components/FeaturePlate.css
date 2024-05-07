@@ -4,7 +4,7 @@
     width: 230px;
     height: 300px;
     margin: 30px;
-    padding-top: 6%;
+    padding-top: 3%;
     border: 1px solid #cbd070;
     
     border-radius: 30px;
@@ -65,7 +65,7 @@
     width: 230px;
     height: 300px;
     margin: 30px;
-    padding-top: 6%;
+    padding-top: 3%;
     border: 1px solid #78dd91;
     border-radius: 30px;
     text-decoration: none;
@@ -85,7 +85,7 @@
     width: 230px;
     height: 300px;
     margin: 30px;
-    padding-top: 6%;
+    padding-top: 4%;
     border: 1px solid #dd7878;
     border-radius: 30px;
     text-decoration: none;
@@ -105,7 +105,7 @@
     width: 230px;
     height: 300px;
     margin: 30px;
-    padding-top: 6%;
+    padding-top: 4%;
     border: 1px solid #dd9f78;
     border-radius: 30px;
     text-decoration: none;
@@ -125,7 +125,7 @@
     width: 230px;
     height: 300px;
     margin: 30px;
-    padding-top: 6%;
+    padding-top: 4%;
     border: 1px solid #dd78b0;
     border-radius: 30px;
     text-decoration: none;
@@ -143,6 +143,11 @@
 
   .feature-content {
     text-align: center;
+    padding: 17px;
+  }
+
+  .feature-content p{
+    color: white;
   }
   
   .feature-content h3 {

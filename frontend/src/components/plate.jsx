@@ -8,6 +8,7 @@ function FeaturePlate(props) {
     <Link to={`./feature/${props.name}`} className={`feature-plate-${props.font}`}>
       <div className="feature-content">
         <h3 className='title'>{props.title}</h3>
+        <h5>______________</h5>
         <p>{props.description}</p>
       </div>
     </Link>
