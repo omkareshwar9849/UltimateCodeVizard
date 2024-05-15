@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../feature/feature.css';
+import '../../../src/styles/feature.css';
+import '../../App.css';
 import Header from '../header';
 import CodeDisplay from '../codeDisplay';
 import CustomCursor from '../CustomCursor';
@@ -9,6 +10,11 @@ const Sqlconvert = () => {
     const [request, setRequest] = useState('');
     const [json, setJson] = useState('');
     const [loading, setLoading] = useState(false);
+    const [darkMode, setDarkMode] = useState(false);
+
+    const toggleColorMode = () => {
+        setDarkMode(prevMode => !prevMode);
+    };
 
     const setJsonResponse = (response) => {
         setJson(response);
@@ -37,26 +43,33 @@ const Sqlconvert = () => {
 
     return (
         <div>
-            <CustomCursor />
-            <Header />
-            <div className="code">
-                <h1 className='main_header'>CONVERTING INTO THE SQL COMMANDS </h1>
-                <div className="row">
-                    <div className="col-md-6 left-section prompt2">
-                        <form onSubmit={handleSubmit}>
-                            
-                            <label htmlFor="otp" autoComplete="false" className="form-label"><h1> Enter Your Request </h1></label>
-                            <input type="text" value={request} onChange={handleChange} className="form-control" id="otp" name="otp" required />
-                            <button type="submit" className="btn btn-primary">Submit</button>
-                            {loading && <div className="loader"></div>}
-                        </form>
-                    </div>
-                    <div className="col-md-6 right-section">
-                        <h1 className='main_header'>{`Result Display `}</h1>
-                        <CodeDisplay code={json.output} language='human language' />
+            <setion className={darkMode ? ' dark-mode' : 'light-mode'}>
+                <CustomCursor />
+                <Header Mode={darkMode ? ' dark-mode' : 'light-mode'} />
+
+                <div className='toggle-switch right-section' onClick={toggleColorMode}>
+                    <div className={`toggle-slider ${darkMode ? 'dark-mode' : 'light-mode'}`}></div>
+                </div>
+
+                <div className="code">
+                    <h1 className='main_header'>ULTIMATE CODE GENERATING</h1>
+                    <div className="row">
+                        <div className="col-md-6 left-section prompt2">
+                            <form onSubmit={handleSubmit}>
+
+                                <label htmlFor="otp" autoComplete="false" className="form-label"><h4> Enter Your Request </h4></label>
+                                <input type="text" value={request} onChange={handleChange} className="form-control translucent-input" id="otp" name="otp" required />
+                                <button type="submit" className="btn btn-primary">Submit</button>
+                                {loading && <div className="loader"></div>}
+                            </form>
+                        </div>
+                        <div className="col-md-6 right-section">
+                            <h1 className='main_header'>{`SQL COMMAND `}</h1>
+                            <CodeDisplay code={json.output} language='human language' />
+                        </div>
                     </div>
                 </div>
-            </div>
+            </setion>
         </div>
     )
 }

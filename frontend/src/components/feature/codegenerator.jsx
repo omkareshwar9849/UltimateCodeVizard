@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../feature/feature.css';
+import '../../../src/styles/feature.css';
+import '../../App.css';
 import Header from '../header';
 import CodeDisplay from '../codeDisplay';
 import CustomCursor from '../CustomCursor';
@@ -11,6 +12,11 @@ const Codegenerator = () => {
     const [selectedLanguage, setSelectedLanguage] = useState('c');
     const [loading, setLoading] = useState(false);
     const [inputLanguage, setInputLanguage] = useState(selectedLanguage);
+    const [darkMode, setDarkMode] = useState(false);
+
+    const toggleColorMode = () => {
+        setDarkMode(prevMode => !prevMode);
+    };
 
     const setJsonResponse = (response) => {
         setJson(response);
@@ -45,40 +51,47 @@ const Codegenerator = () => {
 
     return (
         <div>
-            <CustomCursor />
-            <Header />
-            <div className="code">
-                <h1 className='main_header'>ULTIMATE CODE GENERATING</h1>
-                <div className="row">
-                    <div className="col-md-6 left-section prompt">
-                        <form onSubmit={handleSubmit}>
-                            <div className="mb-4">
-                                <label htmlFor="language" className="form-label"><h4>Select Language:</h4></label>
-                                <select id="language" className="form-select translucent-input" value={inputLanguage} onChange={handleLanguageChange}>
-                                    <option value="c">C</option>
-                                    <option value="cpp">C++</option>
-                                    <option value="java">JAVA</option>
-                                    <option value="python">Python</option>
+            <setion className={darkMode ? ' dark-mode' : 'light-mode'}>
+                <CustomCursor />
+                <Header Mode={darkMode ? ' dark-mode' : 'light-mode'} />
 
-                                </select>
-                            </div>
+                <div className='toggle-switch right-section' onClick={toggleColorMode}>
+                    <div className={`toggle-slider ${darkMode ? 'dark-mode' : 'light-mode'}`}></div>
+                </div>
 
-                            <div className="mb-4">
-                                <label htmlFor="otp" autoComplete="false" className="form-label "><h4>Enter Your Request:</h4></label>
-                                <input type="text" value={request} onChange={handleChange} className="form-control translucent-input" id="otp" name="otp" required />
-                            </div>
-                            <div>
-                            <button type="submit" className="btn btn-primary">Submit</button>
-                                {loading && <div className="loader"></div>}
-                            </div>
-                        </form>
-                    </div>
-                    <div className="col-md-6 right-section">
-                        <h1 className='main_header'>{`Code Display `}</h1>
-                        <CodeDisplay code={json.output} language={selectedLanguage} />
+                <div className="code">
+                    <h1 className='main_header'>ULTIMATE CODE GENERATING</h1>
+                    <div className="row">
+                        <div className="col-md-6 left-section prompt">
+                            <form onSubmit={handleSubmit}>
+                                <div className="mb-4">
+                                    <label htmlFor="language" className="form-label"><h4>Select Language:</h4></label>
+                                    <select id="language" className="form-select translucent-select" value={inputLanguage} onChange={handleLanguageChange}>
+                                        <option value="c">C</option>
+                                        <option value="cpp">C++</option>
+                                        <option value="java">JAVA</option>
+                                        <option value="python">Python</option>
+
+                                    </select>
+                                </div>
+
+                                <div className="mb-4">
+                                    <label htmlFor="otp" autoComplete="false" className="form-label "><h4>Enter Your Request:</h4></label>
+                                    <input type="text" value={request} onChange={handleChange} className="form-control translucent-input" id="otp" name="otp" required />
+                                </div>
+                                <div>
+                                    <button type="submit" className="btn btn-primary">Submit</button>
+                                    {loading && <div className="loader"></div>}
+                                </div>
+                            </form>
+                        </div>
+                        <div className="col-md-6 right-section">
+                            <h1 className='main_header'>{`Code Display `}</h1>
+                            <CodeDisplay code={json.output} language={selectedLanguage} />
+                        </div>
                     </div>
                 </div>
-            </div>
+            </setion>
         </div>
     )
 }
