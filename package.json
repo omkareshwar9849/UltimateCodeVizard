@@ -6,6 +6,7 @@
     "start-frontend": "cd frontend && npm start",
     "start-backend": "cd backend && npm start",
     "install": "concurrently \"npm run install-backend\" \"npm run install-frontend\"",
+    "i": "concurrently \"npm run install-backend\" \"npm run install-frontend\"",
     "install-frontend": "cd frontend && npm install",
     "install-backend": "cd backend && npm install"
   },
