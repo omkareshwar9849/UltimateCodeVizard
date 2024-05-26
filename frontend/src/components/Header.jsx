@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import '../../src/App.css';
 import logo from "../images/logo2.png";
 
@@ -9,7 +9,6 @@ const Header = ({ darkMode, toggleColorMode }) => {
         localStorage.removeItem('token');
         navigate("/login");
     };
-    let location = useLocation();
 
     return (
         <section id="header" >
