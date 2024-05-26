@@ -2,7 +2,3 @@
 /frontend/.env
 
 /backend/node_modules/
-/backend/.env
-
-/node_modules
-/backendv2/node_modules/
