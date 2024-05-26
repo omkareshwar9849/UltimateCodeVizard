@@ -122,7 +122,10 @@ a:hover {
 .dark-mode .code1,
 .dark-mode .code {
     background: linear-gradient(to right, #090909, #2e2e2e);
+    /* background-image: url('./images/dark-background2.jpg'); */
     color: #fff;
+    /* background-size:cover;
+    background-repeat: no-repeat; */
 }
 
 .dark-mode .toggle-slider {
@@ -164,7 +167,10 @@ a:hover {
 .light-mode #header,
 .light-mode .code1,
 .light-mode .code {
-    background: linear-gradient(to right, #fefefe, #cbcbcb);
+    /* background: linear-gradient(to right, #fefefe, #cbcbcb); */
+    background-image: url('./images/light-background1.jpg');
+    background-repeat: no-repeat;
+    background-size:auto;
     color: #000;
 }
 
@@ -190,6 +196,16 @@ a:hover {
 .light-mode .feature-plate-orange:hover,
 .light-mode .feature-plate-pink:hover {
     color: white;
+}
+
+.light-mode .feature-plate-yellow,
+.light-mode .feature-plate-purple,
+.light-mode .feature-plate-blue,
+.light-mode .feature-plate-green,
+.light-mode .feature-plate-red,
+.light-mode .feature-plate-orange,
+.light-mode .feature-plate-pink {
+    background-color: white;
 }
 
 .light-mode .translucent-select,
@@ -235,3 +251,33 @@ a:hover {
 .light-mode .toggle-slider {
     transform: translate(2px, -50%);
 }
+
+
+/* Button styling */
+
+.golden-button {
+    background-color: #c99250; /* Gold color */
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: none; 
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight:400;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .golden-button:hover {
+    background-color: #FFC300; /* Slightly darker gold */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  .golden-button:active {
+    background-color: #FFA500; /* Even darker gold */
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+    transform: translateY(0);
+  }
+  
