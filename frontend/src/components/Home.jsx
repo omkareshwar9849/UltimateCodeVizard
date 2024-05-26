@@ -1,35 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from './header';
-import CustomCursor from './CustomCursor';
+import Header from './Header';
 import FeaturePlate from './plate';
 import '../styles/home.css';
 import '../App.css';
 import image from "../images/image001.svg";
 
-const Home = () => {
-
-  const [darkMode, setDarkMode] = useState(false);
-
-  const toggleColorMode = () => {
-    setDarkMode(prevMode => !prevMode);
-  };
-
+const Home = ({ darkMode, toggleColorMode }) => {
 
   return (
     <div>
       <section className={darkMode ? ' dark-mode' : 'light-mode'}>
-        <CustomCursor />
-        <Header Mode={darkMode ? ' dark-mode' : 'light-mode'} />
-
-        <div className='toggle-switch right-section' onClick={toggleColorMode}>
-          <div className={`toggle-slider ${darkMode ? 'dark-mode' : 'light-mode'}`}></div>
-        </div>
-
-
+        <Header darkMode={darkMode} toggleColorMode={toggleColorMode}  />
         <div className="container-fluid">
-
-
           <div className="row">
             <div className="col-md-6 left-section">
               <h1 className='main_header'>Welcome to Ultimate Code Vizard</h1>
@@ -40,7 +23,7 @@ const Home = () => {
               </p>
             </div>
             <div className="col-md-6 right-section">
-              <img src={image} alt="SVG Image" className="img-fluid" />
+              <img src={image} alt="SVGImage" className="img-fluid" />
             </div>
           </div>
 

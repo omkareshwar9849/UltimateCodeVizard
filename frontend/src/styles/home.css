@@ -45,6 +45,12 @@ h4 {
   height: auto;
 }
 
+.small-image {
+  max-width: 100%;
+  height: auto;
+  background-image: url('../images/Designer.jpeg');
+}
+
 .loader {
   border: 6px solid rgba(250, 248, 248, 0.1);
   border-left-color: #d0b870;
