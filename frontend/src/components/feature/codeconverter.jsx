@@ -2,31 +2,21 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../../src/styles/feature.css';
 import '../../App.css';
-import CustomCursor from '../CustomCursor';
-import Header from '../header';
+import Header from '../Header';
 import CodeDisplay from '../codeDisplay';
 
-
-function Codeconverter() {
+function Codeconverter({darkMode, toggleColorMode}) {
     const [request, setRequest] = useState('');
     const [json, setJson] = useState('');
     const [selectedLanguage, setSelectedLanguage] = useState('c');
     const [loading, setLoading] = useState(false);
     const [inputLanguage, setInputLanguage] = useState(selectedLanguage);
-    const [darkMode, setDarkMode] = useState(false);
-
-    const toggleColorMode = () => {
-        setDarkMode(prevMode => !prevMode);
-    };
-
-    const setJsonResponse = (response) => {
-        setJson(response);
-    };
+    const host = process.env.REACT_APP_BACKEND_HOST;
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
-        const res = await fetch("http://localhost:5000/generate", {
+        const res = await fetch(`${host}/api/code/generate`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -55,13 +45,7 @@ function Codeconverter() {
     return (
         <div>
             <setion className={darkMode ? ' dark-mode' : 'light-mode'}>
-                <CustomCursor />
-                <Header Mode={darkMode ? ' dark-mode' : 'light-mode'} />
-
-                <div className='toggle-switch right-section' onClick={toggleColorMode}>
-                    <div className={`toggle-slider ${darkMode ? 'dark-mode' : 'light-mode'}`}></div>
-                </div>
-
+                <Header Mode={darkMode ? ' dark-mode' : 'light-mode'} darkMode={darkMode} toggleColorMode={toggleColorMode} />
 
                 <div className="code1">
                     <h1 className='main_header'>ULTIMATE CODE GENERATING</h1>
