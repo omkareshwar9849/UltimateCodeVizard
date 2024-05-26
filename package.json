@@ -1,0 +1,10 @@
+{
+    "name": "ultimate-code-vizard",
+    "version": "2.0.0",
+    "scripts": {
+      "start": "npm run start-frontend & npm run start-backend",
+      "start-frontend": "cd frontend && npm start",
+      "start-backend": "cd backend && npm start"
+    }
+  }
+  
