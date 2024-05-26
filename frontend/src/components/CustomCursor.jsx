@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../CustomCursor.css';
+import '../styles/CustomCursor.css';
 
 const CustomCursor = () => {
     const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
