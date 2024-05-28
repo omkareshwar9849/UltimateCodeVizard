@@ -57,7 +57,7 @@ const Login = (props) => {
 
     const emailsend = process.env.REACT_APP_EMAIL;
     if (Number(emailsend) === 1) {
-      console.log("email sentttt")
+      props.showAlert("Sending OTP, please wait....", "success");
       fetch(`${host}/api/email/sendotp`, {
         method: "POST",
         headers: {
@@ -65,8 +65,6 @@ const Login = (props) => {
         },
         body: JSON.stringify({ email: credentials.email })
       }).then((response) => {
-        console.log(response)
-        console.log("hello");
         if (response.ok) {
           setShowOtpBox(true);
           props.showAlert(`OTP Sent to your email successfully`, "success");
@@ -122,7 +120,10 @@ const Login = (props) => {
                   <label htmlFor="otp" autoComplete="false" className="form-label">Enter OTP</label>
                   <input type="text" value={otp} maxLength={4} onChange={onChange} className="form-control" id="otp" name="otp" required />
                 </div>
-                <button type="submit" className="golden-button">Login</button>
+                <div>
+                <button type="button" onClick={handleSendOtp} className="golden-button">Resend OTP</button>
+                <button type="submit" className="golden-button ms-2">Login</button>
+                </div>
               </>
             )}
           </form>

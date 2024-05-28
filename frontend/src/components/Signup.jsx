@@ -59,6 +59,7 @@ const Signup = (props) => {
     }
     const emailsend = process.env.REACT_APP_EMAIL;
     if (Number(emailsend) === 1) {
+      props.showAlert("Sending OTP, please wait....", "success");
       fetch(`${host}/api/email/sendotp`, {
         method: "POST",
         headers: {
@@ -128,7 +129,10 @@ const Signup = (props) => {
                   <label htmlFor="otp" autoComplete="false" className="form-label">Enter OTP</label>
                   <input type="text" value={otp} maxLength={4} onChange={onChange} className="form-control" id="otp" name="otp" required />
                 </div>
-                <button type="submit" className="golden-button">SignUp</button>
+                <div>
+                <button type="button" onClick={handleSendOtp} className="golden-button">Resend OTP</button>
+                <button type="submit" className="golden-button ms-2">SignUp</button>
+                </div>
               </>
             )}
           </form>
