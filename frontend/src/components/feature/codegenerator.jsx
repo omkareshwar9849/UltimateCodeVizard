@@ -45,7 +45,7 @@ const Codegenerator = ({darkMode, toggleColorMode}) => {
             <setion className={darkMode ? ' dark-mode' : 'light-mode'}>
                 <Header Mode={darkMode ? ' dark-mode' : 'light-mode'} darkMode={darkMode} toggleColorMode={toggleColorMode}/>
                 <div className="code">
-                    <h1 className='main_header'>ULTIMATE CODE GENERATING</h1>
+                    <h1 className='main_header'>ULTIMATE CODE GENERATOR</h1>
                     <div className="row">
                         <div className="col-md-6 left-section prompt">
                             <form onSubmit={handleSubmit}>
@@ -61,11 +61,11 @@ const Codegenerator = ({darkMode, toggleColorMode}) => {
                                 </div>
 
                                 <div className="mb-4">
-                                    <label htmlFor="otp" autoComplete="false" className="form-label "><h4>Enter Your Request:</h4></label>
+                                    <label htmlFor="otp" autoComplete="false" className="form-label "><h4>Enter Your Problem Statement:</h4></label>
                                     <input type="text" value={request} onChange={handleChange} className="form-control translucent-input" id="otp" name="otp" required />
                                 </div>
                                 <div>
-                                    <button type="submit" className="btn btn-primary">Submit</button>
+                                    <button type="submit" className="golden-button mt-3">Submit</button>
                                     {loading && <div className="loader"></div>}
                                 </div>
                             </form>

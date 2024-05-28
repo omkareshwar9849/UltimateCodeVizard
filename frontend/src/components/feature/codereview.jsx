@@ -49,7 +49,7 @@ function Codereview({darkMode, toggleColorMode}) {
                 <Header Mode={darkMode ? ' dark-mode' : 'light-mode'} darkMode={darkMode} toggleColorMode={toggleColorMode}/>
 
                 <div className="code1">
-                    <h1 className='main_header'>ULTIMATE CODE GENERATING</h1>
+                    <h1 className='main_header'>ULTIMATE CODE REVIEWER</h1>
                     <div className="row">
                         <div className="col-md-6 left-section prompt1">
                             <form onSubmit={handleSubmit}>
@@ -63,9 +63,9 @@ function Codereview({darkMode, toggleColorMode}) {
                                     </select>
                                 </div>
 
-                                <label htmlFor="otp" autoComplete="false" className="form-label"><h4> Enter Your Request </h4></label>
+                                <label htmlFor="otp" autoComplete="false" className="form-label"><h4> Enter Your Code </h4></label>
                                 <textarea value={request} onChange={handleChange} className="form-control translucent-input" id="otp" name="otp" required rows={10} cols={10} />
-                                <button type="submit" className="btn btn-primary">Submit</button>
+                                <button type="submit" className="golden-button mt-3">Submit</button>
                                 {loading && <div className="loader"></div>}
                             </form>
                         </div>
