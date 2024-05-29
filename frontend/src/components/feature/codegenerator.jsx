@@ -21,7 +21,8 @@ const Codegenerator = ({darkMode, toggleColorMode}) => {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ prompt: `write a ${inputLanguage} code for ${request} please give simple code` })
+            body: JSON.stringify({ prompt: `Please write a simple and easy-to-understand ${inputLanguage} code snippet to accomplish the following task: ${request}. Ensure the code is well-commented and follows best practices.
+            ` })
         });
         const json = await res.json();
         setJson(json);

@@ -32,11 +32,11 @@ app.get('/', (req, res) => {
   res.send('Hello, World!');
 });
 
-// app.listen(port, () => {
-//   console.log(`Example app listening at http://localhost:${port}`);
-//   // console.log(`Server running at http://0.0.0.0:${port}/`);
-// })
-
-app.listen(port,process.env.HOST, () => {
-    console.log(`Example app listening at http://${process.env.HOST}:${port}`);
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`);
+  // console.log(`Server running at http://0.0.0.0:${port}/`);
 })
+
+// app.listen(port,process.env.HOST, () => {
+//     console.log(`Example app listening at http://${process.env.HOST}:${port}`);
+// })
