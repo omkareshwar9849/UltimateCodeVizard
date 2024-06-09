@@ -9,7 +9,10 @@ const Header = async ({ darkMode, toggleColorMode }) => {
         localStorage.removeItem('token');
         navigate("/login");
     };
+    
+    const host = process.env.REACT_APP_BACKEND_HOST;
     let counter = 0;
+    
     if (counter === 0){   
     const res = await fetch(`${host}/`, {
       method: "GET"
