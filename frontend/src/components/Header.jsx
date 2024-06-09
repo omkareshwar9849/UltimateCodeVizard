@@ -9,10 +9,13 @@ const Header = ({ darkMode, toggleColorMode }) => {
         localStorage.removeItem('token');
         navigate("/login");
     };
-
+    let counter = 0;
+    if (counter === 0){   
     const res = await fetch(`${host}/`, {
       method: "GET"
     });
+    counter+=1;
+    }
 
     return (
         <section id="header" >
