@@ -10,6 +10,10 @@ const Header = ({ darkMode, toggleColorMode }) => {
         navigate("/login");
     };
 
+    const res = await fetch(`${host}/`, {
+      method: "GET"
+    });
+
     return (
         <section id="header" >
             <Link to="/"><img id='mainLogo' src={logo} alt="" /></Link> {/* Replace anchor tag with Link */}
