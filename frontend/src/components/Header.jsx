@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import '../../src/App.css';
 import logo from "../images/logo2.png";
 
-const Header = ({ darkMode, toggleColorMode }) => {
+const Header = async ({ darkMode, toggleColorMode }) => {
     let navigate = useNavigate();
     const handleLogout = () => {
         localStorage.removeItem('token');
