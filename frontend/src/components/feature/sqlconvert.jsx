@@ -27,7 +27,7 @@ const Sqlconvert = ({darkMode, toggleColorMode}) => {
     };
 
     const handleChange = (e) => {
-        if (e.target.name == "otp") {
+        if (e.target.name === "otp") {
             setRequest(e.target.value);
         }
     };

@@ -29,7 +29,7 @@ const Login = (props) => {
         //save the auth token and redirect
         localStorage.setItem('token', json.authtoken);
         props.showAlert("Login Successfully", "success");
-        navigate("/");
+        navigate("/UltimateCodeVizard/");
       }
       else {
         props.showAlert("Invalid OTP", "danger");

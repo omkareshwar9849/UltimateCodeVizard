@@ -3,26 +3,16 @@ import { Link, useNavigate } from "react-router-dom";
 import '../../src/App.css';
 import logo from "../images/logo2.png";
 
-const Header = async ({ darkMode, toggleColorMode }) => {
+const Header = ({ darkMode, toggleColorMode }) => {
     let navigate = useNavigate();
     const handleLogout = () => {
         localStorage.removeItem('token');
         navigate("/login");
     };
     
-    const host = process.env.REACT_APP_BACKEND_HOST;
-    let counter = 0;
-    
-    if (counter === 0){   
-    const res = await fetch(`${host}/`, {
-      method: "GET"
-    });
-    counter+=1;
-    }
-
     return (
         <section id="header" >
-            <Link to="/"><img id='mainLogo' src={logo} alt="" /></Link> {/* Replace anchor tag with Link */}
+            <Link to="/UltimateCodeVizard"><img id='mainLogo' src={logo} alt="" /></Link> {/* Replace anchor tag with Link */}
             <div>
                 <ul id="navbar">
                     {/* <button onClick={toggleColorMode} className="btn btn-secondary mx-2">
@@ -48,13 +38,13 @@ const Header = async ({ darkMode, toggleColorMode }) => {
                             <li className="dropdown navigators">
                                 <a href="/" className="dropdown-toggle ">Feature</a>
                                 <ul className="dropdown-menu ">
-                                    <li className='dropdown-links'><Link to="/feature/codegenerator">Code Generator</Link></li>
-                                    <li className='dropdown-links'><Link to="/feature/errorhandler">Error Handler</Link></li>
-                                    <li className='dropdown-links'><Link to="/feature/codereview">Code Reviewer</Link></li>
-                                    <li className='dropdown-links'><Link to="/feature/timecomplexity">Time Complexity</Link></li>
-                                    <li className='dropdown-links'><Link to="/feature/codeconverter">Code Converter</Link></li>
-                                    <li className='dropdown-links'><Link to="/feature/codeefficiency">Code Optimizer</Link></li>
-                                    <li className='dropdown-links'><Link to="/feature/sqlconvert">Sql Converter</Link></li>
+                                    <li className='dropdown-links'><Link to="/UltimateCodeVizard/feature/codegenerator">Code Generator</Link></li>
+                                    <li className='dropdown-links'><Link to="/UltimateCodeVizard/feature/errorhandler">Error Handler</Link></li>
+                                    <li className='dropdown-links'><Link to="/UltimateCodeVizard/feature/codereview">Code Reviewer</Link></li>
+                                    <li className='dropdown-links'><Link to="/UltimateCodeVizard/feature/timecomplexity">Time Complexity</Link></li>
+                                    <li className='dropdown-links'><Link to="/UltimateCodeVizard/feature/codeconverter">Code Converter</Link></li>
+                                    <li className='dropdown-links'><Link to="/UltimateCodeVizard/feature/codeefficiency">Code Optimizer</Link></li>
+                                    <li className='dropdown-links'><Link to="/UltimateCodeVizard/feature/sqlconvert">Sql Converter</Link></li>
                                 </ul>
                             </li>
 

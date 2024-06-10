@@ -1,5 +1,5 @@
 {
-  "name": "react-temp",
+  "name": "ultimate-code-vizard",
   "version": "0.1.0",
   "private": true,
   "homepage": "http://omkareshwar9849.github.io/UltimateCodeVizard",
@@ -42,5 +42,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
   }
 }
