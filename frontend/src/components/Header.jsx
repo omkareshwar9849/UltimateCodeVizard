@@ -24,17 +24,17 @@ const Header = ({ darkMode, toggleColorMode }) => {
                             <Link className="golden-button mx-2" to="/login" role='button'>Login</Link>
                             <Link className="golden-button me-2" to="/signup" role='button'>SignUp</Link>
                             <div>
-                                <input onClick={toggleColorMode} type="checkbox" class="checkbox" id="checkbox" />
-                                <label for="checkbox" class="checkbox-label">
-                                    <i class="fas fa-moon"></i>
-                                    <i class="fas fa-sun"></i>
-                                    <span class="ball"></span>
+                                <input onClick={toggleColorMode} type="checkbox" className="checkbox" id="checkbox" />
+                                <label htmlFor="checkbox" className="checkbox-label">
+                                    <i className="fas fa-moon"></i>
+                                    <i className="fas fa-sun"></i>
+                                    <span className="ball"></span>
                                 </label>
                             </div>
                         </>
                     ) : (
                         <>
-                            <li className='navigators'><Link to="/" className="active">Home</Link></li>
+                            <li className='navigators'><Link to="/UltimateCodeVizard" className="active">Home</Link></li>
                             <li className="dropdown navigators">
                                 <a href="/" className="dropdown-toggle ">Feature</a>
                                 <ul className="dropdown-menu ">
@@ -49,11 +49,11 @@ const Header = ({ darkMode, toggleColorMode }) => {
                             </li>
 
                             <div>
-                                <input onClick={toggleColorMode} type="checkbox" class="checkbox" id="checkbox" />
-                                <label for="checkbox" class="checkbox-label">
-                                    <i class="fas fa-moon"></i>
-                                    <i class="fas fa-sun"></i>
-                                    <span class="ball"></span>
+                                <input onClick={toggleColorMode} type="checkbox" className="checkbox" id="checkbox" />
+                                <label htmlFor="checkbox" className="checkbox-label">
+                                    <i className="fas fa-moon"></i>
+                                    <i className="fas fa-sun"></i>
+                                    <span className="ball"></span>
                                 </label>
                             </div>
 

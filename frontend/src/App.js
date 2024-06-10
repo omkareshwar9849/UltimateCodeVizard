@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -19,6 +19,7 @@ import Signup from './components/Signup';
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
+  const host = process.env.REACT_APP_BACKEND_HOST;
 
   const toggleColorMode = () => {
     setDarkMode(prevMode => !prevMode);
@@ -34,6 +35,23 @@ const App = () => {
       setAlert(null);
     }, 1500);
   };
+
+  useEffect(() => {
+    const wakeUpBackend = async () => {
+      try {
+        const response = await fetch(host); // Replace with your backend URL
+        if (response.ok) {
+          console.log('Backend server woke up successfully');
+        } else {
+          console.error('Error waking up backend server:', response.statusText);
+        }
+      } catch (error) {
+        console.error('Error waking up backend server:', error);
+      }
+    };
+
+    wakeUpBackend();
+  },[]);
 
   return (
     <div>
