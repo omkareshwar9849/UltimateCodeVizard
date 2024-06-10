@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/UltimateCodeVizard/static/css/main.94bcf108.css",
+    "main.js": "/UltimateCodeVizard/static/js/main.1f5e3772.js",
+    "static/js/592.fa19345f.chunk.js": "/UltimateCodeVizard/static/js/592.fa19345f.chunk.js",
+    "static/media/Designer.jpeg": "/UltimateCodeVizard/static/media/Designer.9c9b04dc46cee0203f4a.jpeg",
+    "static/media/light-background1.jpg": "/UltimateCodeVizard/static/media/light-background1.c5ce909a69509b7772fe.jpg",
+    "static/media/image001.svg": "/UltimateCodeVizard/static/media/image001.7be81bfae7cb0061cdd81a97eb629d5c.svg",
+    "static/media/logo2.png": "/UltimateCodeVizard/static/media/logo2.e9b1c85c9ca7bdf5eb2f.png",
+    "index.html": "/UltimateCodeVizard/index.html",
+    "main.94bcf108.css.map": "/UltimateCodeVizard/static/css/main.94bcf108.css.map",
+    "main.1f5e3772.js.map": "/UltimateCodeVizard/static/js/main.1f5e3772.js.map",
+    "592.fa19345f.chunk.js.map": "/UltimateCodeVizard/static/js/592.fa19345f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.94bcf108.css",
+    "static/js/main.1f5e3772.js"
+  ]
+}
