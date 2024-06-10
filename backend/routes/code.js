@@ -1,8 +1,6 @@
 const express = require('express');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 require('dotenv').config()
-const cors = require('cors')
-const fetchuser = require('../middleware/fetchuser');
 const router = express.Router();
 const { body, validationResult } = require('express-validator');
 

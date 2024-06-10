@@ -40,7 +40,7 @@ const App = () => {
       <CustomCursor/>
       <Router>
         <Routes>
-          <Route path="/" element={<Home darkMode={darkMode} toggleColorMode={toggleColorMode} />} />
+          <Route path="/UltimateCodeVizard" element={<Home darkMode={darkMode} toggleColorMode={toggleColorMode} />} />
           <Route path="/login" element={<Login darkMode={darkMode} toggleColorMode={toggleColorMode} alert={alert} showAlert = {showAlert} />} />
           <Route path="/signup" element={<Signup darkMode={darkMode} toggleColorMode={toggleColorMode} alert={alert} showAlert = {showAlert} />} />
           <Route path="/feature/codegenerator" element={<Codegenerator darkMode={darkMode} toggleColorMode={toggleColorMode}/>} />
